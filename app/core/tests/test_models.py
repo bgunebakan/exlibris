@@ -58,3 +58,13 @@ class ModelTests(TestCase):
         )
 
         self.assertEqual(str(tag), tag.name)
+
+    def test_book_str(self):
+        """Test the book string respresentation"""
+
+        book = models.Book.objects.create(
+            user=sample_user(),
+            name='Harry Potter'
+        )
+
+        self.assertEqual(str(book), book.name)
